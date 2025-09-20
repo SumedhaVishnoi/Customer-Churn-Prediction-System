@@ -1,0 +1,21 @@
+<!-- filepath: c:\Users\SUMEDHA\OneDrive\Desktop\Projects- final\Customer churn prediction\web app\templates\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Model Metrics</title>
+</head>
+<body>
+    <h1>Model Accuracy and Precision Comparison</h1>
+    <img src="data:image/png;base64,{{ chart }}" alt="Model Metrics Chart">
+    <hr>
+    <h2>Predict Customer Churn</h2>
+    <form action="/predict" method="post">
+        {% for feature in feature_names %}
+            <label>{{ feature }}:</label>
+            <input type="number" step="any" name="{{ feature }}" required><br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
